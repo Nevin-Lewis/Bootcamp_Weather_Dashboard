@@ -1,0 +1,1 @@
+fetch('api.openweathermap.org/data/2.5/forecast?q={city name},{state code},{country code}&appid={393fe9e5d586a9565ac961c89947a415}')
