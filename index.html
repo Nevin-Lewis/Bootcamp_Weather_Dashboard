@@ -9,24 +9,94 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
-<body class="min-100-vh flex-column">
-    <header class="p-5 text-center text-white bg-primary">
-      <h1>The Weather Report</h1>
+<body class="flex-column">
+    <header class="p-3 text-center text-white bg-primary">
+      <h1>Weather Dashboard</h1>
     </header>
-    <main class="flex-row align-center col-auto p-3 bg-light">
-      <section class="card card-rounded col-3 ht bg-white justify-center">
-        <header class="card-header bg-secondary text-center">
-          <h2 class="text-white p-1 bg-primary">
-            Choose Location
-          </h2>
-        </header>
-        <form class="p-3" id="InputForm">
-          <input type="text" class="card-body" id = "City">
-            <br /><br />
-           <p> Input your City above</p>
-           <button type="submit"> Submit </button>
+  <main class="container-fluid">
+    <div class="row vh-100">
+    <section class="col-lg-3 bg-danger">
+      <form id="InputForm">
+        <label for="City"> Search for a City: </label> <br>
+        <input type="text" id="City"> <br> 
+        <button type="submit"> Search</button>
+        <hr>
+
         </form>
-        <script src="./Assets/script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    </section>
+    <section class="col-9 bg-secondary">
+      <section class="row bg-success border"> 
+        <content>
+        <h1 id="City_name"> City <i> Test</i> </h1> 
+      <ul id="weather_report">
+        <li> Temp</li>
+        <li> Wind</li>
+        <li> Humidity</li>
+      </ul>
+    </content>
+      </section>
+        <section class="row bg-primary">
+          <content>
+          <h2>5-day Forecast: </h2>
+          
+          <div class="card-deck">
+          <section class="card">
+            <content class="card-body">
+            <h5 class="card-title"> 9/14/2022 </h5>
+            <i> Yelp</i>
+            <p class="card-text"> Temp: 63.55F</p>
+            <p class="card-text"> Wind</p>
+            <p class="card-text"> Humidity</p>
+          </content>
+          </section>
+          <section class="card">
+            <content class="card-body">
+            <h5 class="card-title"> Date </h5>
+            <i> Yelp</i>
+            <p class="card-text"> Temp</p>
+            <p class="card-text"> Wind</p>
+            <p class="card-text"> Humidity</p>
+          </content>
+          </section>
+          <section class="card">
+            <content class="card-body">
+            <h5 class="card-title"> Date </h5>
+            <i> Yelp</i>
+            <p class="card-text"> Temp</p>
+            <p class="card-text"> Wind</p>
+            <p class="card-text"> Humidity</p>
+          </content>
+          </section>
+          <section class="card">
+            <content class="card-body">
+            <h5 class="card-title"> Date </h5>
+            <i> Yelp</i>
+            <p class="card-text"> Temp</p>
+            <p class="card-text"> Wind</p>
+            <p class="card-text"> Humidity</p>
+          </content>
+          </section>
+          <section class="card">
+            <content class="card-body">
+            <h5 class="card-title"> Date </h5>
+            <i> Yelp</i>
+            <p class="card-text"> Temp</p>
+            <p class="card-text"> Wind</p>
+            <p class="card-text"> Humidity</p>
+          </content>
+          </section>
+        </div>
+          </content>
+        </section>
+
+    </section>
+  </div>
+  </main>
+  <script src="./Assets/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
 </body>
 </html>
