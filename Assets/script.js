@@ -3,8 +3,10 @@ var InputFormEl = document.querySelector('#InputForm');
 var city_textEl = document.querySelector('#City_name');
 var temp_textEl = document.querySelector("#weather_report");
 var future_textEl = document.querySelector(".card-deck")
+var city_list = document.querySelector("#cities")
 var weather_data ={};
 var future_data= {};
+var city_history = [];
 
 var formSubmitHandler = function (event) {
 event.preventDefault();
@@ -13,18 +15,20 @@ var city_name = city_input.value.trim();
 if (city_name) {
     getCurrentweatherRepo(city_name);
     get5dayweatherRepo(city_name);
-   city_input.value = '';
+    city_history.push(city_name);
+    console.log(city_history);
+    localStorage.setItem("city_name", JSON.stringify(city_history));
+    city_input.value = '';
+
   } else {
     alert('Please enter a City name');
   };
-
 };
 
 var getCurrentweatherRepo = function(city_name) {
     var apiURL= 'https://api.openweathermap.org/data/2.5/weather?q=' + city_name + ',USA&appid=393fe9e5d586a9565ac961c89947a415&units=imperial';
 fetch(apiURL) 
     .then(function (response) {
-        console.log(response)
     response.json().then(function (data) {
         localStorage.setItem("weather_data", JSON.stringify(data));
         setAttributes()
@@ -61,13 +65,38 @@ fetch(apiURL)
     });   
 })
 };
+function lists(){
+    for (var i = 0; i < city_history.length; i++){
+        var city = city_history[i];
 
-var init = function(){
-    future_data = JSON.parse(localStorage.getItem("future_data"));
-    if (future_data !== null) {
+        var li = document.createElement("li");
+        li.textContent = city;
+        li.setAttribute("data-index", i);
+
+    city_list.appendChild(li);
+    }};
+
+function init() {
+    
+    if (JSON.parse(localStorage.getItem("future_data")) !== null) {
+        future_data = JSON.parse(localStorage.getItem("future_data"));
         setFuture();
         setAttributes();
     }
-};
+    if (JSON.parse(localStorage.getItem('city_name')) !== null){
+        city_history = JSON.parse(localStorage.getItem("city_name"));
+        console.log(city_history);
+    }
+
+}
+city_list.addEventListener("click", function(event) {
+    var element = event.target;
+    if (element.matches("li") === true){
+    var name = element.textContent;
+    console.log(name)
+    }
+});
+
  init();
+lists();
 InputFormEl.addEventListener('submit', formSubmitHandler);
