@@ -14,12 +14,12 @@
   </head>
 
 <body class="flex-column">
-    <header class="p-3 text-center text-white bg-primary">
+    <header class="p-3 text-center text-white">
       <h1>Weather Dashboard</h1>
     </header>
   <main class="container-fluid">
     <div class="row vh-100">
-    <section class="col-lg-3 bg-danger">
+    <section class="col-lg-3">
       <form id="InputForm">
         <label for="City"> Search for a City: </label> <br>
         <input type="text" id="City"> <br> 
@@ -28,10 +28,10 @@
         </form>
       <ul id="cities"></ul>
     </section>
-    <section class="col-9 bg-secondary">
-      <section class="row bg-success border"> 
+    <section class="col-9 p-0">
+      <section class="first"class="row"> 
         <content>
-        <h1 id="City_name"> City <i> Test</i> </h1> 
+        <h1 id="City_name">  </h1> 
       <ul id="weather_report">
         <li> Temp</li>
         <li> Wind</li>
@@ -39,24 +39,15 @@
       </ul>
     </content>
       </section>
-        <section class="row bg-primary">
+        <section class="row p-3">
           <content>
           <h2>5-day Forecast: </h2>
           
           <div class="card-deck">
           <section class="card">
             <content class="card-body">
-            <h5 class="card-title"> 9/14/2022 </h5>
-            <i> Yelp</i>
-            <p class="card-text"> Temp: 63.55F</p>
-            <p class="card-text"> Wind</p>
-            <p class="card-text"> Humidity</p>
-          </content>
-          </section>
-          <section class="card">
-            <content class="card-body">
             <h5 class="card-title"> Date </h5>
-            <i> Yelp</i>
+            <img> 
             <p class="card-text"> Temp</p>
             <p class="card-text"> Wind</p>
             <p class="card-text"> Humidity</p>
@@ -65,7 +56,7 @@
           <section class="card">
             <content class="card-body">
             <h5 class="card-title"> Date </h5>
-            <i> Yelp</i>
+            <img>
             <p class="card-text"> Temp</p>
             <p class="card-text"> Wind</p>
             <p class="card-text"> Humidity</p>
@@ -74,7 +65,7 @@
           <section class="card">
             <content class="card-body">
             <h5 class="card-title"> Date </h5>
-            <i> Yelp</i>
+            <img>
             <p class="card-text"> Temp</p>
             <p class="card-text"> Wind</p>
             <p class="card-text"> Humidity</p>
@@ -83,7 +74,16 @@
           <section class="card">
             <content class="card-body">
             <h5 class="card-title"> Date </h5>
-            <i> Yelp</i>
+            <img>
+            <p class="card-text"> Temp</p>
+            <p class="card-text"> Wind</p>
+            <p class="card-text"> Humidity</p>
+          </content>
+          </section>
+          <section class="card">
+            <content class="card-body">
+            <h5 class="card-title"> Date </h5>
+            <img>
             <p class="card-text"> Temp</p>
             <p class="card-text"> Wind</p>
             <p class="card-text"> Humidity</p>

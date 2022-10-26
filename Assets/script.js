@@ -16,10 +16,12 @@ if (city_name) {
     getCurrentweatherRepo(city_name);
     get5dayweatherRepo(city_name);
     city_history.push(city_name);
-    console.log(city_history);
     localStorage.setItem("city_name", JSON.stringify(city_history));
     city_input.value = '';
-
+    var li = document.createElement("li");
+        li.textContent = city_name;
+        city_list.appendChild(li);
+    console.log(future_data) 
   } else {
     alert('Please enter a City name');
   };
@@ -39,15 +41,17 @@ fetch(apiURL)
 };
 var setAttributes = function(event){
 weather_data = JSON.parse(localStorage.getItem("weather_data"));
-city_textEl.innerHTML = weather_data.name + '('+ moment.unix(weather_data.dt).format("MMM Do, YYYY") + ')';
+city_textEl.innerHTML = weather_data.name + '('+ moment.unix(weather_data.dt).format("MMM Do, YYYY") + ')' + '<img src="http://openweathermap.org/img/w/' + weather_data.weather[0].icon +'.png">';
 temp_textEl.children[0].innerHTML = "Temp: " + weather_data.main.temp + " F";
 temp_textEl.children[1].innerHTML = "Wind: " + weather_data.wind.speed + " MPH";
-temp_textEl.children[2].innerHTML = "Humidity: " + weather_data.main.humidity + " %";}
+temp_textEl.children[2].innerHTML = "Humidity: " + weather_data.main.humidity + " %";
+}
 
 var setFuture = function(event){
 future_data = JSON.parse(localStorage.getItem("future_data"));
 for (let i = 0; i < 5; i++){
 future_textEl.children[i].children[0].children[0].innerHTML = moment.unix(future_data.list[i*6+6].dt).format("MMM Do, YYYY");
+future_textEl.children[i].children[0].children[1].setAttribute("src", "http://openweathermap.org/img/w/" + future_data.list[i*6+6].weather[0].icon + ".png");
 future_textEl.children[i].children[0].children[2].innerHTML = "Temp: " + future_data.list[i*6+6].main.temp + " F";
 future_textEl.children[i].children[0].children[3].innerHTML = "Wind: " + future_data.list[i*6+6].wind.speed + " MPH";
 future_textEl.children[i].children[0].children[4].innerHTML = "Humidity: " + future_data.list[i*6+6].main.humidity + " %";
@@ -92,11 +96,12 @@ function init() {
 city_list.addEventListener("click", function(event) {
     var element = event.target;
     if (element.matches("li") === true){
-    var name = element.textContent;
-    console.log(name)
+    city = element.textContent;
+    getCurrentweatherRepo(city);
+    get5dayweatherRepo(city);
     }
 });
 
  init();
-lists();
+ lists();
 InputFormEl.addEventListener('submit', formSubmitHandler);
