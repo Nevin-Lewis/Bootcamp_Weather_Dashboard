@@ -1,8 +1,7 @@
 # Bootcamp_Weather_Dashboard
 This is the repo for the UT weather dashboard challenge.
 ## Description
-This was the password generatoro assignment. I did not use a pop-op window for each element, instaed I opted for a single pop-up window to add all the sections of the password. I also created a slider instead of length input, and therefore did not need a warning for length because I sent the range from 8-128. I added a refresh button that generates a new password with the previously set parameters. If you click generate password then the form will be cleared and you will have to restart. If you try to generate a password without any of the elements, an error message will pop-up
-
+This was the weather dashboard assignment. When a city is typed into the text box and enter is clicked then the current weather as well as the forcast for the next 5 days will present it self. As you search for more cities, the name of the previous city will be added to a local storage and displayed as a list. If any item on the list is clicked then the search will revert back to that city. The order the list will not change. The basic weather data as well as an icon for the weather are presented for each time stamp.
 ## Installation
 N/A
 
