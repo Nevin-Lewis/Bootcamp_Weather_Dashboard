@@ -9,7 +9,8 @@ N/A
 ## Access
 Follow link --> https://nevin-lewis.github.io/Bootcamp_Weather_Dashboard/
 ## Photo of my edits
-![Bootcamp_Weather_Dashboard](https://user-images.githubusercontent.com/64855834/197929719-288a175b-f5c9-4ba2-86ea-34a555edcd54.png)
+![Bootcamp_Weather_Dashboard (2)](https://user-images.githubusercontent.com/64855834/197929957-0ef1a832-26f6-4df8-8b09-a39a34d55cfa.png)
+
 
 
 
